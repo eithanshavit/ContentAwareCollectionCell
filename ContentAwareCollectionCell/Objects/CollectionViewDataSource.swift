@@ -51,6 +51,7 @@ class CollectionViewDataSource: NSObject {
       "abandoned house remains of a garden silent rain",
       "huge waves crashing along the pier mist rises",
       "Dividing the fog silently, tall pines",
+      "in his jacket pocket a lemon candy from the funeral home"
     ]
     for poem in poems {
       data.append(Poem(text: poem))
