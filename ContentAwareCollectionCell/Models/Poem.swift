@@ -11,9 +11,11 @@ import UIKit
 class Poem: NSObject {
   
   var text: String
+  var moodColor: UIColor
   
-  init(text: String) {
+  init(text: String, moodColor: UIColor) {
     self.text = text
+    self.moodColor = moodColor
   }
    
 }

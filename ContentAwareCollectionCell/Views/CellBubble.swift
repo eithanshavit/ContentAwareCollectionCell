@@ -13,9 +13,10 @@ class CellBubble: UIView {
   var color: UIColor!
   
   override func drawRect(rect: CGRect) {
-    let rectanglePath = UIBezierPath(roundedRect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height), cornerRadius: 6)
+    super.drawRect(rect)
+    let rectanglePath = UIBezierPath(roundedRect: rect, cornerRadius: 6)
     color.setFill()
     rectanglePath.fill()
   }
-  
+
 }

@@ -21,6 +21,7 @@ class CollectionViewDataSource: NSObject {
   init(collectionView: UICollectionView) {
     self.collectionView = collectionView
     
+    // Some dummy data
     let poems = [
       "in the parking lot this new fallen snow- much of it Reserved",
       "the scent of spring each time you're passing by - midwinter's daydream",
@@ -53,8 +54,19 @@ class CollectionViewDataSource: NSObject {
       "Dividing the fog silently, tall pines",
       "in his jacket pocket a lemon candy from the funeral home"
     ]
+    
+    func getRandomColor() -> UIColor {
+      let colors = [
+        UIColor(red:0.4, green:0.23, blue:0.72, alpha:1.0),
+        UIColor(red:0.01, green:0.53, blue:0.82, alpha:1.0),
+        UIColor(red:0.01, green:0.66, blue:0.96, alpha:1.0),
+        UIColor(red:0.27, green:0.54, blue:1.0, alpha:1.0)
+      ]
+      return colors[Int(arc4random_uniform(UInt32(colors.count)))]
+    }
+
     for poem in poems {
-      data.append(Poem(text: poem))
+      data.append(Poem(text: poem, moodColor: getRandomColor()))
     }
   }
   
