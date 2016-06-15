@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ContentAwareCollectionViewCell {
-  func configure(#model: AnyObject, prototype: Bool)
+  func configure(model: AnyObject, prototype: Bool)
   func fittedSizeForConstrainedSize(constrainedSize: CGSize) -> CGSize
 }
 
@@ -25,7 +25,7 @@ class CollectionViewCell: UICollectionViewCell, ContentAwareCollectionViewCell {
   let containerView = CellBubble()
   
   convenience init() {
-    self.init(frame: CGRect.zeroRect)
+    self.init(frame: CGRect.zero)
     setup()
   }
   
@@ -34,7 +34,7 @@ class CollectionViewCell: UICollectionViewCell, ContentAwareCollectionViewCell {
     setup()
   }
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setup()
   }
@@ -50,7 +50,7 @@ class CollectionViewCell: UICollectionViewCell, ContentAwareCollectionViewCell {
     containerView.addSubview(textLabel)
   }
   
-  func configure(#model: AnyObject, prototype: Bool) {
+  func configure(model: AnyObject, prototype: Bool) {
     let poem = model as! Poem
     textLabel.text = poem.text
     containerView.color = poem.moodColor

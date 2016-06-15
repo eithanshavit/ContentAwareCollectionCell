@@ -200,6 +200,8 @@
 		D076FD4F1ADF8D3200748128 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = " Eithan Shavit";
 				TargetAttributes = {

@@ -99,7 +99,7 @@ extension CollectionViewDataSource: ContentAwareCollectionViewDataSource {
   func configuredCellForIndexPath(indexPath: NSIndexPath, prototype: Bool) -> UICollectionViewCell {
     let cell = reusableCellForIndexPath(indexPath, prototype: prototype) as! CollectionViewCell
     let model: AnyObject = data[indexPath.row]
-    cell.configure(model: model, prototype: prototype)
+    cell.configure(model, prototype: prototype)
     return cell
   }
   
@@ -117,7 +117,7 @@ extension CollectionViewDataSource: ContentAwareCollectionViewDataSource {
   
   private func reusableCellForIndexPath(indexPath: NSIndexPath, prototype: Bool) -> UICollectionViewCell {
     // Get reuse identifier
-    var cellId = cellIdentifierForIndexPath(indexPath)
+    let cellId = cellIdentifierForIndexPath(indexPath)
     
     // Return protoype if needed
     if prototype {
@@ -125,7 +125,7 @@ extension CollectionViewDataSource: ContentAwareCollectionViewDataSource {
     }
     
     // Return dequeued cell
-    return collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! UICollectionViewCell
+    return collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) 
   }
   
   private func prototypeCellForIdentifier(reuseIdentifier: String) -> UICollectionViewCell {
